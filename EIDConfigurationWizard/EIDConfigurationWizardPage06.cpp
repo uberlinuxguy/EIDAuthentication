@@ -41,7 +41,7 @@ INT_PTR CALLBACK	WndProc_06TESTRESULTOK(HWND hWnd, UINT message, WPARAM wParam, 
 		}
 		break;
 	case WM_COMMAND:
-		// Analyse les sélections de menu :
+		// Analyse les sï¿½lections de menuï¿½:
 		switch (LOWORD(wParam))
 		{	
 		case IDC_06UPDATEDATABASE:

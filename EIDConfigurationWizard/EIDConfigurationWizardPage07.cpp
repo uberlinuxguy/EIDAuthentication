@@ -70,7 +70,7 @@ INT_PTR CALLBACK	WndProc_07TESTRESULTNOTOK(HWND hWnd, UINT message, WPARAM wPara
 		case WM_COMMAND:
 			wmId    = LOWORD(wParam);
 			wmEvent = HIWORD(wParam);
-			// Analyse les sélections de menu :
+			// Analyse les sï¿½lections de menuï¿½:
 			switch (wmId)
 			{	
 				case IDC_07SENDREPORT:
