@@ -312,7 +312,7 @@ INT_PTR CALLBACK	WndProc_03NEW(HWND hWnd, UINT message, WPARAM wParam, LPARAM lP
 		case WM_COMMAND:
 		wmId    = LOWORD(wParam);
 		wmEvent = HIWORD(wParam);
-		// Analyse les sélections de menu :
+		// Analyse les sï¿½lections de menuï¿½:
 		switch (wmId)
 		{	
 			case IDC_03SELECT:
