@@ -9,6 +9,6 @@ Build by installing Build Tools for Visual Studio https://visualstudio.microsoft
 This link provides information on how to start linking VSCode and old Visual Stuido 2022 projects.
 
 Tasks:
-[ ] test the code and see if it works.
-[ ] move to a build system that works better with VSCode
-[ ] Finish removing XP support.
+- [ ] test the code and see if it works.
+- [ ] move to a build system that works better with VSCode
+- [ ] Finish removing XP support.
