@@ -8,7 +8,6 @@ Build by installing Build Tools for Visual Studio https://visualstudio.microsoft
 
 This link provides information on how to start linking VSCode and old Visual Stuido 2022 projects.
 
-Tasks:
-- [ ] test the code and see if it works.
-- [ ] move to a build system that works better with VSCode
-- [ ] Finish removing XP support.
+If you would like to track how I am doing with working on this fork, check out this Discussion and leave a comment if you are interested in testing/helping out or even if you are just interested in using it when I am done.  Feedback helps to motivate me.
+
+https://github.com/uberlinuxguy/EIDAuthentication/discussions/2
