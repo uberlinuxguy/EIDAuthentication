@@ -7,6 +7,8 @@ Using msbuild, the solution builds without WIX but needs the Cryptographic Provi
 Build by installing Build Tools for Visual Studio https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022  
 
 This link provides information on how to start linking VSCode and old Visual Stuido 2022 projects.
+https://code.visualstudio.com/docs/cpp/config-msvc
+
 
 If you would like to track how I am doing with working on this fork, check out this Discussion and leave a comment if you are interested in testing/helping out or even if you are just interested in using it when I am done.  Feedback helps to motivate me.
 
