@@ -1,5 +1,7 @@
 clone of https://sourceforge.net/projects/eidauthenticate/
 
+EIDAuthenticate is the solution to perform smart card authentication on stand alone computers or to protect local accounts on domain computers. Originally made by certified security experts, EIDAuthenticate respects the spirit of the deep internal Windows security mechanisms and offers a user friendly interface.
+
 Changes added by @andrysky to start dropping XP support
 
 Using msbuild, the solution builds without WIX but needs the Cryptographic Provider Development Kit https://www.microsoft.com/en-us/download/details.aspx?id=30688
