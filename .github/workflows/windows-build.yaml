@@ -1,0 +1,35 @@
+name: Build on windows.
+on:
+  release:
+  pull_request:
+    branches: [ main ]
+defaults:
+  run:
+    working-directory: platforms\vs
+jobs:
+  build:
+
+    runs-on: windows-latest
+    steps:
+      - name: Check out repo        
+        uses: actions/checkout@v2
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@2
+        with:
+          msbuild-architecture: x64
+
+      - name: Build app for release
+        run: msbuild EIDCredentialProvider.sln -t:rebuild -property:Configuration=Release /p:Platform=x64
+
+      - name: Create nsis installer
+        uses: joncloud/makensis-action@v3.3
+        with: 
+          script-file: Installer/Installerx64.nsi
+          arguments: "/V3"
+
+      - name: upload binaries to release
+        uses: softprops/action-gh-release@v1
+        if: ${{startsWith(github.ref, 'refs/tags/') }}
+        with:
+            files: Installer/EIDInstallx64.exe
