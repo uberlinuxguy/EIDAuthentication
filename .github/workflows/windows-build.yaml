@@ -2,9 +2,6 @@ name: Build on windows.
 on:
   release:
     types: [published]
-defaults:
-  run:
-    working-directory: platforms\vs
 jobs:
   build:
 
