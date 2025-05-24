@@ -21,7 +21,6 @@
 #pragma comment(lib,"Msi.lib")
 
 #include "../EIDCardLibrary/Registration.h"
-#include "../EIDCardLibrary/XPCompatibility.h"
 #include "../EIDCardLibrary/Tracing.h"
 
 BOOL LsaEIDRemoveAllStoredCredential();

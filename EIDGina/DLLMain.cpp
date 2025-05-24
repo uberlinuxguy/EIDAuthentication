@@ -2,7 +2,6 @@
 //
 #include <Windows.h>
 
-#include "..\EIDCardLibrary\XPCompatibility.h"
 #pragma comment(lib,"Winscard")
 #pragma comment(lib,"Crypt32")
 

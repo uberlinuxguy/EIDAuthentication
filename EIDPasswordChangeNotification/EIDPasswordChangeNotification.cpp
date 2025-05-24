@@ -22,8 +22,7 @@
 
 #include "../EIDCardLibrary/Tracing.h"
 #include "../EIDCardLibrary/StoredCredentialManagement.h"
-#include "../EIDCardLibrary/Registration.h"
-#include "../EIDCardLibrary/XPCompatibility.h"
+#include "../EIDCardLibrary/Registration.h"//#include "../EIDCardLibrary/XPCompatibility.h"
 
 typedef NTSTATUS
 (NTAPI LSA_IMPERSONATE_CLIENT) (

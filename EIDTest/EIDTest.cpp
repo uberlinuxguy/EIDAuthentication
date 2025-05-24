@@ -1,4 +1,4 @@
-// EIDCardLibraryTest.cpp : définit le point d'entrée pour l'application.
+// EIDCardLibraryTest.cppï¿½: dï¿½finit le point d'entrï¿½e pour l'application.
 //
 #include <ntstatus.h>
 #define WIN32_NO_STATUS 1
@@ -36,7 +36,6 @@
 #include "EIDSecuritySupportProviderTest.h"
 #include "OnlineDatabaseTest.h"
 #include "../EIDCardLibrary/Registration.h"
-#include "../EIDCardLibrary/XPCompatibility.h"
 
 #ifdef UNICODE
 #if defined _M_IX86
@@ -50,10 +49,10 @@
 #endif
 #endif
 
-// Variables globales :
+// Variables globalesï¿½:
 HINSTANCE hInst;								// instance actuelle
 HWND hMainWnd;
-// Pré-déclarations des fonctions incluses dans ce module de code :
+// Prï¿½-dï¿½clarations des fonctions incluses dans ce module de codeï¿½:
 
 INT_PTR CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 
@@ -116,13 +115,13 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 
 //
-//  FONCTION : WndProc(HWND, UINT, WPARAM, LPARAM)
+//  FONCTIONï¿½: WndProc(HWND, UINT, WPARAM, LPARAM)
 //
-//  BUT :  traite les messages pour la fenêtre principale.
+//  BUTï¿½:  traite les messages pour la fenï¿½tre principale.
 //
 //  WM_COMMAND	- traite le menu de l'application
-//  WM_PAINT	- dessine la fenêtre principale
-//  WM_DESTROY	- génère un message d'arrêt et retourne
+//  WM_PAINT	- dessine la fenï¿½tre principale
+//  WM_DESTROY	- gï¿½nï¿½re un message d'arrï¿½t et retourne
 //
 //
 INT_PTR CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -184,7 +183,7 @@ INT_PTR CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	case WM_COMMAND:
 		wmId    = LOWORD(wParam);
 		wmEvent = HIWORD(wParam);
-		// Analyse les sélections de menu :
+		// Analyse les sï¿½lections de menuï¿½:
 		switch (wmId)
 		{
 	// test thread detection function	

@@ -59,9 +59,6 @@
     <ClCompile Include="OnlineDatabase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="XPCompatibility.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CContainer.h">
@@ -113,9 +110,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OnlineDatabase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="XPCompatibility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EIDAuthenticateVersion.h">
