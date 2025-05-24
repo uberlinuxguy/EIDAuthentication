@@ -22,7 +22,7 @@ jobs:
         run: Start-Process -FilePath "./cpdksetup.exe" -Wait -NoNewWindow -ArgumentList "/features", "+", "/q", "/log", "./install-log.txt"
 
       - name: CPDK Check
-        run: type ./install-log.txt; dir 'c:\program files (x86)\windows kits\10\include\'
+        run: type ./install-log.txt; dir 'c:\program files (x86)\windows kits\10\'
 
       - name: Build app for release
         run: msbuild EIDCredentialProvider.sln -t:rebuild -property:Configuration=Release /p:Platform=x64
