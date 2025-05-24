@@ -6,7 +6,6 @@
   !include "X64.nsh"
   !include "WinVer.nsh"
 
-
 ;--------------------------------
 ;General
 
@@ -15,6 +14,7 @@
   OutFile "EIDInstallx64.exe"
 
   ;Default installation folder
+  ;XXX: Are we using SYSDIR for a reason?
   InstallDir "$SYSDIR"
   
 
@@ -52,6 +52,15 @@ Section "Core" SecCore
 
   SetOutPath "$INSTDIR"
   
+  ;ADD YOUR OWN FILES HERE...
+  ${DisableX64FSRedirection}
+  FILE "..\x64\Release\EIDAuthenticationPackage.dll"
+  FILE "..\x64\Release\EIDCredentialProvider.dll"
+  FILE "..\x64\Release\EIDPasswordChangeNotification.dll"
+  FILE "..\x64\Release\EIDConfigurationWizard.exe"
+
+  CreateShortcut "$DESKTOP\EID Authentication Configuration.lnk" "$INSTDIR\EIDConfigurationWizard.exe.exe"
+
   ;Create uninstaller
   WriteUninstaller "$SYSDIR\EIDUninstall.exe"
 
@@ -61,22 +70,19 @@ Section "Core" SecCore
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EIDAuthentication" "DisplayName" "EID Authentication"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\EIDAuthentication" "UninstallString" "$WINDIR\SYSWOW64\EIDUninstall.exe"
 
-  ;ADD YOUR OWN FILES HERE...
-
-  ${DisableX64FSRedirection}
-  FILE "..\x64\Release\EIDAuthenticationPackage.dll"
-  FILE "..\x64\Release\EIDCredentialProvider.dll"
-  FILE "..\x64\Release\EIDPasswordChangeNotification.dll"
-  FILE "..\x64\Release\EIDConfigurationWizard.exe"
-
   ExecWait 'rundll32.exe EIDAuthenticationPackage.dll,DllRegister'
- 
  
   SetPluginUnload manual
 
   SetRebootFlag true
 
 SectionEnd
+
+
+
+
+
+
 
 ;--------------------------------
 ;Descriptions
@@ -119,11 +125,6 @@ Function .onInit
   ${If} ${RunningX64}
   ${Else}
     MessageBox MB_OK "This installer is designed for 64bits only"
-    Abort
-  ${EndIf}
-
-  ${If} ${AtMostWinXP}
-    MessageBox MB_OK "This installer is designed for Windows Vista or older"
     Abort
   ${EndIf}
 
