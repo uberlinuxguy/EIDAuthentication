@@ -226,7 +226,7 @@ BOOL PostDataToTheSupportSite(PSTR szPostData)
 			FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER|FORMAT_MESSAGE_FROM_SYSTEM,
 					NULL,dwError,0,(LPTSTR)&Error,0,NULL);
 			_stprintf_s(szAdvancedErrorMessage,ARRAYSIZE(szAdvancedErrorMessage),
-				TEXT("0x%08X - %s\r\nHTTP STATUS CODE: %d"),dwError,Error, statusCode);
+				TEXT("0x%08X - %s\r\nHTTP STATUS CODE: %d"),dwError,(wchar_t *)Error, statusCode);
 			LocalFree(Error);
 			__leave;
 		}
@@ -250,7 +250,7 @@ BOOL PostDataToTheSupportSite(PSTR szPostData)
 			FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER|FORMAT_MESSAGE_FROM_SYSTEM,
 					NULL,dwError,0,(LPTSTR)&Error,0,NULL);
 			_stprintf_s(szAdvancedErrorMessage,ARRAYSIZE(szAdvancedErrorMessage),
-				TEXT("0x%08X - %s\r\nDetail: %S"),dwError,Error, szResult);
+				TEXT("0x%08X - %s\r\nDetail: %S"),dwError,(wchar_t *)Error, szResult);
 			LocalFree(Error);
 			__leave;
 		}
@@ -436,7 +436,7 @@ BOOL CommunicateTestNotOK(DWORD dwErrorCode, PTSTR szEmail, PTSTR szTracingFile,
 		if (!RegOpenKeyEx(HKEY_LOCAL_MACHINE, TEXT("SOFTWARE\\Microsoft\\Cryptography\\Calais\\SmartCards"), 0, KEY_READ, &hRegKeyCalais))
 		{
 			BYTE bATR[100];
-			DWORD dwSize = sizeof(bATR);
+			dwSize = sizeof(bATR);
 			if (!RegOpenKeyEx(hRegKeyCalais, szCardName, 0, KEY_READ, &hRegKey))
 			{
 				if (!RegQueryValueEx(hRegKey,TEXT("ATR"), NULL, NULL,(PBYTE)&bATR,&dwSize))

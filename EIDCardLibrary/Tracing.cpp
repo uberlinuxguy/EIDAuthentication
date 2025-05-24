@@ -291,7 +291,7 @@ void MessageBoxWin32Ex2(DWORD status, HWND hWnd, LPCSTR szFile, DWORD dwLine) {
 		FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER|FORMAT_MESSAGE_FROM_SYSTEM,
 			NULL,status,0,(LPTSTR)&Error,0,NULL);
 	}
-	_stprintf_s(szMessage,ARRAYSIZE(szMessage),TEXT("0x%08X - %s"),status,Error);
+	_stprintf_s(szMessage,ARRAYSIZE(szMessage),TEXT("0x%08X - %s"),status,(wchar_t *) Error);
 	EIDCardLibraryTraceEx(szFile, dwLine, "MessageBoxWin32Ex2", WINEVENT_LEVEL_INFO, L"%s", szMessage);
 	MessageBox(hWnd,szMessage, szTitle ,MB_ICONASTERISK);
 	LocalFree(Error);

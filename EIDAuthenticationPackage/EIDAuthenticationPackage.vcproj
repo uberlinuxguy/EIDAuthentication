@@ -45,7 +45,6 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;EIDAUTHENTICATIONPACKAGE_EXPORTS"
-				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				WarningLevel="4"
@@ -120,7 +119,6 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;EIDAUTHENTICATIONPACKAGE_EXPORTS"
-				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				WarningLevel="4"
@@ -212,7 +210,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/LTCG "
+				AdditionalOptions="/LTCGï¿½"
 				OutputFile="$(OutDir)\$(ProjectName).dll"
 				LinkIncremental="1"
 				ModuleDefinitionFile="EIDAuthenticationPackage.def"
@@ -291,7 +289,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/LTCG "
+				AdditionalOptions="/LTCGï¿½"
 				OutputFile="$(OutDir)\$(ProjectName).dll"
 				LinkIncremental="1"
 				ModuleDefinitionFile="EIDAuthenticationPackage.def"
@@ -350,7 +348,6 @@
 				AdditionalOptions="/analyze"
 				Optimization="0"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;EIDAUTHENTICATIONPACKAGE_EXPORTS"
-				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				WarningLevel="4"
@@ -426,7 +423,6 @@
 				AdditionalOptions="/analyze"
 				Optimization="0"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;EIDAUTHENTICATIONPACKAGE_EXPORTS"
-				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				WarningLevel="4"
