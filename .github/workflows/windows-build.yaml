@@ -21,6 +21,9 @@ jobs:
       - name: Unattened install of CPDK
         run: ./cpdksetup.exe /features + /q
 
+      - name: CPDK Check
+        run: dir 'c:\program files (x86)\Windows Kits\10\'
+
       - name: Build app for release
         run: msbuild EIDCredentialProvider.sln -t:rebuild -property:Configuration=Release /p:Platform=x64
 
