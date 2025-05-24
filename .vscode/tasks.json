@@ -36,7 +36,7 @@
             // Use the standard MS compiler pattern to detect errors, warnings and infos
             "problemMatcher": "$msCompile"
         },
-                {
+        {
             "label": "Build Release",
             "type": "shell",
             "command": "msbuild",
@@ -47,6 +47,21 @@
                 "/t:build",
                 // Do not generate summary otherwise it leads to duplicate errors in Problems panel
                 "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                // Reveal the output only if unrecognized errors occur.
+                "reveal": "silent"
+            },
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "/t:clean"
             ],
             "group": "build",
             "presentation": {
