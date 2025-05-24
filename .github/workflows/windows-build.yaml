@@ -19,10 +19,10 @@ jobs:
         run: Invoke-WebRequest https://download.microsoft.com/download/1/7/6/176909b0-50f2-4df3-b29b-830a17ea7e38/CPDK_RELEASE_UPDATE/cpdksetup.exe -OutFile cpdksetup.exe
 
       - name: Unattened install of CPDK
-        run: ./cpdksetup.exe /features + /q
+        run: ./cpdksetup.exe /features + /q /log ./install-log.txt
 
       - name: CPDK Check
-        run: dir 'c:\program files (x86)\Windows Kits\10\'
+        run: type ./install-log.txt
 
       - name: Build app for release
         run: msbuild EIDCredentialProvider.sln -t:rebuild -property:Configuration=Release /p:Platform=x64
