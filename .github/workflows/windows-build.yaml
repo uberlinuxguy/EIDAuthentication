@@ -1,8 +1,7 @@
 name: Build on windows.
 on:
   release:
-  pull_request:
-    branches: [ main ]
+    types: [published]
 defaults:
   run:
     working-directory: platforms\vs
