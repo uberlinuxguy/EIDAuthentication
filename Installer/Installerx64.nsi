@@ -59,7 +59,7 @@ Section "Core" SecCore
   FILE "..\x64\Release\EIDPasswordChangeNotification.dll"
   FILE "..\x64\Release\EIDConfigurationWizard.exe"
 
-  CreateShortcut "$DESKTOP\EID Authentication Configuration.lnk" "$INSTDIR\EIDConfigurationWizard.exe.exe"
+  CreateShortcut "$DESKTOP\EID Authentication Configuration.lnk" "$INSTDIR\EIDConfigurationWizard.exe"
 
   ;Create uninstaller
   WriteUninstaller "$SYSDIR\EIDUninstall.exe"
