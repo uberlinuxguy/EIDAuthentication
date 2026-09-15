@@ -8,7 +8,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check out repo        
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
 
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v2
@@ -23,6 +23,32 @@ jobs:
 
       - name: CPDK Check
         run: type ./install-log.txt; dir 'c:\program files (x86)\windows kits\10\'
+
+      - name: Download EnVar plugin for NSIS
+        uses: carlosperate/download-file-action@v2
+        with:
+          file-url: https://nsis.sourceforge.io/mediawiki/images/7/7f/EnVar_plugin.zip
+          file-name: envar_plugin.zip
+          location: ${{ github.workspace }}
+
+      - name: Extract EnVar plugin
+        run: 7z x -o"${{ github.workspace }}/NSIS_Plugins" "${{ github.workspace }}/envar_plugin.zip"
+
+      - name: 'Install makensis (choco)'
+        run: choco install nsis
+        if: ${{ matrix.os == 'windows-latest' || matrix.os == 'windows-2025' }}
+  
+      - name: 'Install makensis (apt)'
+        run: sudo apt update && sudo apt install -y nsis nsis-pluginapi
+        if: ${{ matrix.os == 'ubuntu-latest' }}
+  
+      - name: 'Install makensis (homebrew)'
+        run: brew update && brew install makensis
+        if: ${{ matrix.os == 'macos-latest' }}
+  
+      - name: 'Set Plugin permissions'
+        run: sudo chown -R $(whoami) /usr/share/nsis/Plugins/
+        if: ${{ matrix.os == 'ubuntu-latest' }}
 
       - name: Build app for release
         run: msbuild EIDCredentialProvider.sln -t:rebuild -property:Configuration=Release /p:Platform=x64
