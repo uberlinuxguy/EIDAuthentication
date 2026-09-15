@@ -28,7 +28,7 @@ jobs:
         run: msbuild EIDCredentialProvider.sln -t:rebuild -property:Configuration=Release /p:Platform=x64
 
       - name: Create nsis installer
-        uses: joncloud/makensis-action@v3.3
+        uses: joncloud/makensis-action@v5.0
         with: 
           script-file: Installer/Installerx64.nsi
           arguments: "/V3"
