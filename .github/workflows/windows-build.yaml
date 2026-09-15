@@ -36,20 +36,7 @@ jobs:
 
       - name: 'Install makensis (choco)'
         run: choco install nsis
-        if: ${{ matrix.os == 'windows-latest' || matrix.os == 'windows-2025' }}
   
-      - name: 'Install makensis (apt)'
-        run: sudo apt update && sudo apt install -y nsis nsis-pluginapi
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-  
-      - name: 'Install makensis (homebrew)'
-        run: brew update && brew install makensis
-        if: ${{ matrix.os == 'macos-latest' }}
-  
-      - name: 'Set Plugin permissions'
-        run: sudo chown -R $(whoami) /usr/share/nsis/Plugins/
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-
       - name: Build app for release
         run: msbuild EIDCredentialProvider.sln -t:rebuild -property:Configuration=Release /p:Platform=x64
 
